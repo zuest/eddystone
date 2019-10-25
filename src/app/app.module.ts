@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import {HttpClientModule} from '@angular/common/http';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { EstimoteBeacons } from '@ionic-native/estimote-beacons';
+import { IBeacon } from '@ionic-native/ibeacon';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -15,7 +15,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
+
     IonicModule.forRoot(MyApp, {
       preloadModules: true
     })
@@ -28,6 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InAppBrowser,
     StatusBar,
     SplashScreen,
+    EstimoteBeacons,
+    IBeacon,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
